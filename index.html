@@ -5,6 +5,10 @@
             Josh Kindla's Page
         </title>
 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
         <link rel="stylesheet" href="css/index.css">
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -14,17 +18,24 @@
 
         <body>
             
-            <header class="navigation">
-                
+
+            <header class="navigation"> 
+
                 <div class="inline-block logo">
                     <img src="images/logo.png" alt="Logo" width="30" height="30">
                 </div>
                 <nav class="inline-block">
-                    <ul>
+                  <button class="hamburger" id="hamburger">
+                    <i class="fa fa-bars"></i>
+                  </button>
+                    <ul class="nav-ul" id="nav-ul">
                         <li class="inline-block">About</li>
-                        <li class="inline-block">Skills</li>
-                        <li class="inline-block">Work</li>
-                        <li class="inline-block">Contact</li>
+                        <li class="inline-block"><a href="#skills">Skills</a></li>
+                        <li class="inline-block"><a href="#work">Work</a></li>
+                        <li class="inline-block"><a href="#contact">Contact</a></li>
+
+                        
+                        </a>
                     </ul>
                 </nav>
 
@@ -34,25 +45,27 @@
             <!--  Hero Section -->
 
             <section class="heroImg">
-               
+
                 <div class="content">
                    <h1 id="heroHeader">Hello, I’m Joshua Kindla. </h1>
                     <p id="introPar">I’m a programmer and designer. I focus on developing mobile and web applications based on extensive user research.</p>
             
-                    <button class="button" onclick="alert('Downloading Resume')" style="vertical-align:middle"> <span>My Resume</span></button>
+                    <button class="button heroBut" onclick="alert('Downloading Resume')" style="vertical-align:middle"> <span>My Resume</span></button>
                
                 </div>
 
-                <div>
+                <div class="heroPic">
                     <img id="heroPic" src="images/heroimg.png">
                     
                 </div>
+
+               
 
             </section>
 
             <!--  My UX Skills section coded using CSS flex -->
 
-            <section class="mySkills">
+            <section class="mySkills" id="skills">
                 <h1 id="skillsHeader">
                     My UX Skills
                 </h1>
@@ -68,7 +81,7 @@
                       </div>
                       <div class="flip-card-back">
                         
-                        <h2>User Research</h2>
+                        <h2><br>User Research</h2>
                         <p id="par1">When conducting user research I rely on user testing, synthesising data from testing results, and developing products based on these results.</p>
                       </div>
                     </div>
@@ -83,7 +96,7 @@
                       </div>
                       <div class="flip-card-back">
                         
-                        <h2>User Testing</h2>
+                        <h2><br>User Testing</h2>
                         <p id="par1">When conducting user research I rely on user testing, synthesising data from testing results, and developing products based on these results.</p>
                       </div>
                     </div>
@@ -99,7 +112,7 @@
                       </div>
                       <div class="flip-card-back">
                         
-                        <h2>User Empathy</h2>
+                        <h2><br>User Empathy</h2>
                         <p id="par2">Understanding user problems and considering their point of view when developing products makes usability more user centric and more intuitive for users.</p>
                       </div>
                     </div>
@@ -112,7 +125,7 @@
 
               <!--  My Work section coded using CSS flex -->
 
-            <section class="myWork">
+            <section class="myWork" id="work">
                 <h1 id="workHeader">
                     My Work
                 </h1>
@@ -123,6 +136,12 @@
 
                      
                         <img id="humane" src="images/Humane.png">
+
+                        <div class="middle">
+                          <div class="text">
+                            <button class="button" onclick="alert('More About SA Humane Society RWD')" style="vertical-align:middle"> <span>Learn More</span></button>
+                          </div>
+                        </div>
                     
 
                         <h4 id="desc1">
@@ -131,11 +150,16 @@
                         <p id="det1">
                           Responsive | Web
                         </p>
-                        <button class="button" onclick="alert('More About SA Humane Society RWD')" style="vertical-align:middle"> <span>Learn More</span></button>
                     </div>
 
                     <div class="travelBud">
                         <img id="travel" src="images/Travel.png">
+
+                        <div class="middle">
+                          <div class="text">
+                            <button class="button" onclick="alert('More About Travel Buddy')" style="vertical-align:middle"> <span>Learn More</span></button>
+                          </div>
+                        </div>
                     
                         <h4 id="desc2">
                           Travel Buddy App
@@ -143,11 +167,44 @@
                         <p id="det2">
                           iOS | Branding
                         </p>
-                        <button class="button" onclick="alert('More About Travel Buddy')" style="vertical-align:middle"> <span>Learn More</span></button>
                     </div>
                 </div> 
 
             </section>
+
+            
+
+            <section class="container-fluid signUp" id="contact">
+
+              <h1 id="workHeader">
+                Contact
+            </h1>
+
+
+              <div class="row">
+                <form>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Your Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Your Message</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+                  <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Subscribe to Newsletter</label>
+                  </div>
+                  <button class="button" onclick="alert('Your message has been submitted')" style="vertical-align:middle"> <span>Submit</span></button>
+          
+        </button>
+        
+                </form>
+        
+              </div>
+            </section>
+        
 
              <!--  Footer -->
             <footer>
@@ -161,16 +218,24 @@
 
             </footer>
 
+            <!-- Pre Loader 
+
+           
+
             <div class="preloader">
               <img src="https://www.seekpng.com/png/full/211-2113357_load-spinner-spinner-load.png">
             </div>
+          -->
+
+          <div class="preloader"></div>
+
+
+
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+          <script src="js/index.js"></script>    
+
            
-
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-            <script src="js/index.js"></script>     
-
-
-
+          
         </body>
     
 </html>

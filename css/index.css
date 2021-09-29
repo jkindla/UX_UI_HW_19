@@ -1,11 +1,35 @@
 body {
     padding: 0;
     margin: 0;
+    background: linear-gradient(-45deg, #CC95C0, #f7b9ff, #a5d9ec, #7AA1D2);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100%;
+  
 }
 
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
 .navigation {
+  position: sticky;
     height: 70px;
-    background-image: linear-gradient(lightgrey, white);
+    background: transparent
+}
+
+.navigation a.icon {
+  display: none;
 }
 
 #heroHeader {
@@ -13,6 +37,10 @@ body {
     font-size: 45px;
     text-align: left;
     margin-left: 30%;
+}
+
+h1 {
+  opacity: 0;
 }
 
 h2 {
@@ -29,6 +57,7 @@ h4 {
 p {
     font-family: 'DM Sans', sans-serif;
     font-size: 20px;
+    opacity: 0;
 }
 
 #introPar {
@@ -46,18 +75,52 @@ p {
     text-align: center;
     float: left;
     margin-left: 7%;
+    opacity: 0;
+}
+a {
+  color: black;
+  text-decoration: none;
 }
 
+a:hover {
+  color:white; 
+  text-decoration:none; 
+  cursor:pointer;  
+}
 nav {
+  display: flex;
+  flex-wrap: wrap;
    width: 73%;
    padding: 1%; 
    font-family: 'DM Sans', sans-serif;
    float: right;
+  
+   
+}
+
+.nav-ul {
+  opacity: 0;
 }
 
 nav li:hover {
     background-color: black;
     color: white;
+    
+    
+}
+
+.hamburger {
+  background-color: transparent;
+  border: 0;
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+.hamburger:focus {
+  outline: none;
+
 }
 
 ul {
@@ -73,6 +136,14 @@ li {
 .heroImg {
     height: 600px;
     padding: 25px;
+    
+}
+.heroPic {
+  opacity: 0;
+}
+
+.heroBut {
+  opacity: 0;
 }
 
 .content {
@@ -192,7 +263,7 @@ li {
   }
   
   .flip-card-back {
-    background-color: #C285D1;
+    background-color: black;
     color: white;
     transform: rotateY(180deg);
   }
@@ -228,14 +299,74 @@ li {
 
   .humaneSoc {
     grid-area: humaneSoc;
+    position: relative;
+    width: 50%;
   }
+  
+
+  #humane {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  
+  .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .humaneSoc:hover #humane {
+    opacity: 0.5;
+  }
+  
+  .humaneSoc:hover .middle {
+    opacity: 1;
+  }
+
+  .text {
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+  }
+  
+  
 
   .travelBud {
     grid-area: travelBud;
+    position: relative;
+    width: 50%;
   } 
 
+  #travel {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+
+  .travelBud:hover #travel {
+    opacity: 0.5;
+  }
+  
+  .travelBud:hover .middle {
+    opacity: 1;
+  }
+  
+
 footer {
-    background-color: #C285D1;
+    background: transparent;
     margin-top: 50px;   
 }
 
@@ -251,6 +382,42 @@ footer {
   }
 
 @media only screen and (max-width: 600px){
+
+  .nav-ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: right;
+  }
+
+  .nav-ul.show {
+    display: flex;
+
+  }
+
+  .hamburger {
+    display: block;
+    float: right;
+  }
+
+  #heroPic {
+    display:    flex;
+    justify-content: center;  
+    width: 100%;  
+    
+    
+    
+    
+    
+  }
+
+  .content {
+    display: block;
+    width: 100%;
+   
+    
+  }
+
 
   .flexContainer {
     display: flex;
@@ -296,35 +463,36 @@ footer {
 
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(360deg);
-  }
-  100% {
-    transform: rotate(720deg);
-  }
-}
+
+/*preloader*/
+
 
 .preloader {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  z-index: 100000;
-  background-color: white;
+  position: absolute;
   top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-
-
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-image: url('../images/logo\ bounce.gif');
+  background-repeat: no-repeat; 
+  background-color: #FFF;
+  background-position: center;
 }
 
-.preloader img {
-  animation-name: spin;
-  animation-duration: 3s;
-  animation-timing-function: ease;
+
+
+
+.signUp form {
+  margin: 35px auto;
+  background-color: #f2f2f2;
+  padding: 25px;
+  border-radius: 7px;
 }
+
+
+
+
+
+
+
