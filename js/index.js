@@ -49,3 +49,8 @@ function fade() {
       $('p').delay(2000).animate({'opacity':'1'},1800);
       $('.heroBut').delay(2100).animate({'opacity':'1'},1800);
       $('.heroPic').delay(2300).animate({'marginTop':'+=-80px','opacity':'1'},1800);
+
+
+
+
+      
